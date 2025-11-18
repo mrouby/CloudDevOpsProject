@@ -6,7 +6,6 @@ pipeline {
     environment {
         IMAGE_NAME = "mrouby/ivolve-app:latest"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-        KUBE_SERVER = "http://localhost:8081"
     }
 
     stages {
@@ -15,13 +14,6 @@ pipeline {
                 script { dockerPipeline.buildImage(IMAGE_NAME) }
             }
         }
-
-        stage('Scan Image') {
-            steps {
-                script { dockerPipeline.scanImage(IMAGE_NAME) }
-            }
-        }
-
         stage('Push Image') {
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub', url: '') {
@@ -29,23 +21,14 @@ pipeline {
                 }
             }
         }
-
         stage('Delete Local Image') {
-            steps {
-                script { dockerPipeline.deleteLocalImage(IMAGE_NAME) }
-            }
+            steps { script { dockerPipeline.deleteLocalImage(IMAGE_NAME) } }
         }
-
         stage('Update Manifests') {
-            steps {
-                script { dockerPipeline.updateManifests(KUBE_SERVER) }
-            }
+            steps { script { dockerPipeline.updateManifests() } }
         }
-
         stage('Push Manifests') {
-            steps {
-                script { dockerPipeline.pushManifests() }
-            }
+            steps { script { dockerPipeline.pushManifests() } }
         }
     }
 }
