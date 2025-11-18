@@ -53,8 +53,7 @@ pipeline {
 
         stage('Push Manifests') {
             steps {
-                script {
-                    dockerPipeline.pushManifests()
+                sh "kubectl --server=http://localhost:8081 apply -f k8s/"
                 }
             }
         }
