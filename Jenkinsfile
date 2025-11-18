@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "mrouby/ivolve-app:latest"
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-id')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
 
     stages {
