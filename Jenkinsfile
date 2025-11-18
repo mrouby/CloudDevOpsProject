@@ -17,13 +17,7 @@ pipeline {
             }
         }
 
-        // stage('Scan Image') {
-        //     steps {
-        //         script {
-        //             dockerPipeline.scanImage(IMAGE_NAME)
-        //         }
-        //     }
-        // }
+        // Scan Image stage is removed
 
         stage('Push Image') {
             steps {
@@ -46,6 +40,11 @@ pipeline {
         stage('Update Manifests') {
             steps {
                 script {
+                    // kubectl pointing to port 8081
+                    dockerPipeline.updateManifests = {
+                        echo "Applying manifests to Kubernetes on port 8081..."
+                        sh "kubectl --server=http://localhost:8081 apply -f k8s/"
+                    }
                     dockerPipeline.updateManifests()
                 }
             }
@@ -53,7 +52,8 @@ pipeline {
 
         stage('Push Manifests') {
             steps {
-                script { dockerPipeline.pushManifests()
+                script {
+                    dockerPipeline.pushManifests()
                 }
             }
         }
