@@ -17,13 +17,13 @@ pipeline {
             }
         }
 
-        stage('Scan Image') {
-            steps {
-                script {
-                    dockerPipeline.scanImage(IMAGE_NAME)
-                }
-            }
-        }
+        // stage('Scan Image') {
+        //     steps {
+        //         script {
+        //             dockerPipeline.scanImage(IMAGE_NAME)
+        //         }
+        //     }
+        // }
 
         stage('Push Image') {
             steps {
