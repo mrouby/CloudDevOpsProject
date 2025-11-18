@@ -1,4 +1,4 @@
-@Library('dockerPipeline.groovy') _
+@Library('shared-library') _
 
 pipeline {
     agent { label 'ec2-agent-1' }
