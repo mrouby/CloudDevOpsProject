@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: ivolve-container
-        image: <dockerhub-user>/ivolve-app:latest
+        image: mrouby/ivolve-app:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
