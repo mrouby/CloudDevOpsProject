@@ -20,17 +20,17 @@ spec:
         image: mrouby/ivolve-app:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
         readinessProbe:
           httpGet:
             path: /
-            port: 3000
+            port: 5000
           initialDelaySeconds: 10
           periodSeconds: 10
         livenessProbe:
           httpGet:
             path: /
-            port: 3000
+            port: 5000
           initialDelaySeconds: 30
           periodSeconds: 30
 
