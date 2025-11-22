@@ -151,7 +151,7 @@ Screenshot examples:
 * ArgoCD dashboard
   ![ArgoCD dashboard](images/ArgoCD_dashboard.png)
 * Sync status healthy
-  ![Sync status healthy](images/healthy)
+  ![Sync status healthy](images/healthy.png)
 
 ---
 
