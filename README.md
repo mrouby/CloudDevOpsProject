@@ -103,12 +103,9 @@ Screenshots needed:
 
 Pipeline triggers build when code is pushed to GitHub.
 
-Screenshot examples:
 
-* Jenkins Dashboard
-* Nodes showing connected agent
 * Pipeline build successful page
-
+![build successful](images/build_successful.png)
 ---
 
 ## 5️⃣ Docker
@@ -116,11 +113,9 @@ Screenshot examples:
 * App containerized using Dockerfile
 * Pushed to DockerHub automatically via pipeline
 
-Screenshot examples:
 
-* Docker build logs
 * DockerHub repository
-
+![DockerHub repository](images/DockerHub_repository.png)
 ---
 
 ## 6️⃣ Kubernetes
