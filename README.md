@@ -48,12 +48,10 @@ Caption: **Overall DevOps CI/CD Architecture**
 
 ## 1️⃣ AWS Setup
 
-*(Screenshots placeholders)*
 
 * EC2 instances created for Jenkins & Agent
 * VPC, subnets, internet gateway created
 
-Caption examples:
 
 * **AWS EC2 instance running – public IP displayed**
   ![AWS EC2 instance running](images/EC2_instances.png)
@@ -151,7 +149,9 @@ Screenshots examples:
 Screenshot examples:
 
 * ArgoCD dashboard
+  ![ArgoCD dashboard](images/ArgoCD_dashboard.png)
 * Sync status healthy
+  ![Sync status healthy](images/healthy)
 
 ---
 
