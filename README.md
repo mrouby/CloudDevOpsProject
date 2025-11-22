@@ -58,6 +58,7 @@ Caption examples:
 * **AWS EC2 instance running – public IP displayed**
   ![AWS EC2 instance running](images/EC2_instances.png)
 * **Security Group allowing SSH, HTTP, HTTPS ports**
+  ![Security Group allowing SSH](images/Security_Groups.png)
 
 ---
 
